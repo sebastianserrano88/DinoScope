@@ -95,37 +95,43 @@ function App() {
           <h2>🦖 Dinosaurs</h2>
 
           <div className="dinosaur-grid">
-            {dinosaurs.map((dinosaur) => (
-              <div className="dinosaur-card" key={dinosaur}>
-                <div className="dinosaur-image">
-                  {dinosaur === "Tyrannosaurus Rex" ? (
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Tyrannosaurus_Rex_Holotype.jpg"
-                      alt={dinosaur}
-                    />
-                  ) : (
-                    "🦖"
-                  )}
+              {dinosaurs.map((dinosaur) => (
+                <div className="dinosaur-card" key={dinosaur.name}>
+                  <div className="dinosaur-image">
+                    🦖
+                  </div>
+
+                  <h3>{dinosaur.name}</h3>
+
+                  <p>
+                    <strong>Period:</strong> {dinosaur.period}
+                  </p>
+
+                  <p>
+                    <strong>Diet:</strong> {dinosaur.diet}
+                  </p>
+
+                  <p>
+                    <strong>Location:</strong> {dinosaur.location}
+                  </p>
+
+                  <button
+                    onClick={() => {
+                      setSearch(dinosaur.name);
+
+                      fetch(
+                        `http://127.0.0.1:5000/api/search?query=${encodeURIComponent(
+                          dinosaur.name
+                        )}`
+                      )
+                        .then((response) => response.json())
+                        .then((data) => setResult(data));
+                    }}
+                  >
+                    Explore
+                  </button>
                 </div>
-
-                <h3>{dinosaur}</h3>
-
-                <button
-                  onClick={() => {
-                    setSearch(dinosaur);
-                    fetch(
-                      `http://127.0.0.1:5000/api/search?query=${encodeURIComponent(
-                        dinosaur
-                      )}`
-                    )
-                      .then((response) => response.json())
-                      .then((data) => setResult(data));
-                  }}
-                >
-                  Explore
-                </button>
-              </div>
-            ))}
+              ))}
           </div>
         </section>
       </main>

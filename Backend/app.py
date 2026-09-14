@@ -14,10 +14,7 @@ def home():
 @app.route("/api/dinosaurs")
 def get_dinosaurs():
     return {
-        "dinosaurs": [
-            dinosaur["name"]
-            for dinosaur in dinosaurs.values()
-        ]
+        "dinosaurs": list(dinosaurs.values())
     }
 
 

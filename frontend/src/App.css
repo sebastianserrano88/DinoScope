@@ -1,4 +1,4 @@
-```css
+
 * {
   box-sizing: border-box;
 }
@@ -168,7 +168,13 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, border-color 0.2s;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.dinosaur-card:hover {
+  transform: translateY(-6px);
+  border-color: #c99a2e;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
 .dinosaur-card:hover {
@@ -194,7 +200,19 @@ body {
 }
 
 .dinosaur-card h3 {
-  margin: 15px 0;
+  margin: 15px 0 12px;
+  color: #e0b52f;
+  font-size: 22px;
+}
+
+.dinosaur-card p {
+  margin: 7px 0;
+  color: #d8d0bb;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dinosaur-card p strong {
   color: #f4ead0;
 }
 
