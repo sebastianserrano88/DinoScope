@@ -1,2 +1,26 @@
 venv/
 .venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+Frontend/node_modules/
+
+# Vite build
+Frontend/dist/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
