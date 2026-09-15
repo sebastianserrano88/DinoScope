@@ -5,7 +5,7 @@ dinosaurs = {
         "period": "Late Cretaceous",
         "diet": "Carnivore",
         "location": "North America",
-        "image": "https://as1.ftcdn.net/v2/jpg/02/14/10/16/1000_F_214101651_rDo4CQsGCUQqMAYNgxR1JsrWilRKskYZ.jpg"
+        "image": ""
     },
 
     "velociraptor": {
